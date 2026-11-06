@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anand Tiwari — DevOps Engineer</title>
+  <meta name="description" content="Portfolio of Anand Tiwari — DevOps engineer and MCA (Cloud Computing) student building on AWS, Linux, Docker and Jenkins CI/CD pipelines.">
+  <meta name="theme-color" content="#F2F0E9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2322263A'/%3E%3Ctext x='32' y='41' font-family='Arial' font-size='24' font-weight='700' fill='white' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Runs before the page paints: saved theme, otherwise the system setting (no light flash in dark mode)
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.dataset.theme = theme;
+      if (theme === 'dark') document.querySelector('meta[name="theme-color"]').content = '#0A1322';
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ───────── Top bar ───────── -->
+  <header class="topbar" id="topbar">
+    <a href="#home" class="brand" aria-label="Back to top">
+      <span class="badge" data-bind="initials">AT</span>
+      <span class="brand-name" data-bind="name">Anand Tiwari</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about" data-nav="about">About</a>
+      <a href="#skills" data-nav="skills">Skills</a>
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#journey" data-nav="journey">Experience</a>
+      <a href="#achievements" data-nav="achievements">Achievements</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+      <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M5.4 18.6l1.5-1.5M17.1 6.9l1.5-1.5"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- ───────── Hero ───────── -->
+    <section class="hero" id="home">
+      <div class="hero-name" aria-hidden="true">ANAND</div>
+
+      <div class="hero-figure">
+        <video class="hero-video" muted loop playsinline preload="auto" hidden></video>
+        <svg class="hero-svg" viewBox="0 0 320 800" role="img" aria-label="Illustrated character of Anand">
+          <defs>
+            <linearGradient id="gSkin" x1="0" x2="1"><stop offset="0" stop-color="#D4A485"/><stop offset="1" stop-color="#B98463"/></linearGradient>
+            <linearGradient id="gTee" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#96313D"/><stop offset="1" stop-color="#6A1B26"/></linearGradient>
+            <linearGradient id="gSleeveL" x1="0" x2="1"><stop offset="0" stop-color="#76202B"/><stop offset="1" stop-color="#93303B"/></linearGradient>
+            <linearGradient id="gSleeveR" x1="0" x2="1"><stop offset="0" stop-color="#862833"/><stop offset="1" stop-color="#621922"/></linearGradient>
+            <linearGradient id="gPants" x1="0" x2="1"><stop offset="0" stop-color="#4A4E61"/><stop offset=".55" stop-color="#3A3E50"/><stop offset="1" stop-color="#2A2D3C"/></linearGradient>
+            <linearGradient id="gHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2727"/><stop offset="1" stop-color="#151213"/></linearGradient>
+            <linearGradient id="gShoe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9E6DF"/></linearGradient>
+            <radialGradient id="gShadow"><stop offset="0" stop-color="#1D2032" stop-opacity=".24"/><stop offset="1" stop-color="#1D2032" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="160" cy="762" rx="124" ry="14" fill="url(#gShadow)"/>
+          <!-- legs -->
+          <path d="M104 392 H216 C223 470 229 600 235 742 L171 744 C169 640 165 540 160 472 C155 540 151 640 149 744 L85 742 C91 600 97 470 104 392 Z" fill="url(#gPants)"/>
+          <path d="M160 472 C155 540 151 640 149 744 L141 744 C146 640 151 540 158 470 Z" fill="#000" opacity=".14"/>
+          <path d="M119 476 C117 566 115 656 113 738 M201 476 C203 566 205 656 207 738" stroke="#fff" stroke-opacity=".07" stroke-width="2" fill="none"/>
+          <!-- shoes -->
+          <path d="M86 736 C100 730 140 730 151 736 L153 754 C130 763 96 764 76 758 C74 749 78 740 86 736 Z" fill="url(#gShoe)"/>
+          <path d="M76 756 C96 763 132 763 153 754 L153 760 C132 768 94 769 76 762 Z" fill="#CFCBC2"/>
+          <path d="M234 736 C220 730 180 730 169 736 L167 754 C190 763 224 764 244 758 C246 749 242 740 234 736 Z" fill="url(#gShoe)"/>
+          <path d="M244 756 C224 763 188 763 167 754 L167 760 C188 768 226 769 244 762 Z" fill="#CFCBC2"/>
+          <!-- upper body (also reused on the ID card) -->
+          <g id="c-upper" class="c-upper">
+            <!-- neck -->
+            <path d="M145 122 H175 L177 166 C168 176 152 176 143 166 Z" fill="#AF7A57"/>
+            <!-- maroon crew-neck tee (untucked) -->
+            <path d="M112 168 C124 162 133 160 139 159 C146 177 174 177 181 159 C187 160 196 162 208 168 C222 174 228 186 228 200 L225 410 C200 417 120 417 95 410 L92 200 C92 186 98 174 112 168 Z" fill="url(#gTee)"/>
+            <path d="M95 410 L92 200 C92 190 95 182 100 177 C102 250 106 330 112 414 Z" fill="#000" opacity=".07"/>
+            <path d="M225 410 L228 200 C228 190 225 182 220 177 C218 250 214 330 208 414 Z" fill="#000" opacity=".13"/>
+            <path d="M118 396 C126 390 136 392 142 398 M178 398 C186 391 196 391 204 397" stroke="#4E111B" stroke-opacity=".45" stroke-width="1.4" fill="none"/>
+            <path d="M95 404 C120 411 200 411 225 404" stroke="#4E111B" stroke-opacity=".5" stroke-width="2" fill="none"/>
+            <path d="M139 159 C146 177 174 177 181 159" stroke="#57141E" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <text x="161" y="282" transform="rotate(-6 161 282)" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="17" letter-spacing=".3" fill="#F6EEE8">simple things</text>
+            <!-- head -->
+            <g class="c-head">
+              <ellipse cx="123" cy="100" rx="7" ry="11" fill="#BE8A68"/>
+              <ellipse cx="197" cy="100" rx="7" ry="11" fill="#AE7956"/>
+              <path d="M122 92 C122 52 198 52 198 92 C198 122 186 142 160 146 C134 142 122 122 122 92 Z" fill="url(#gSkin)"/>
+              <!-- beard + moustache -->
+              <path d="M121 95 C122 124 135 151 160 154 C185 151 198 124 199 95 C197 110 192 120 185 125 C178 119 170 116 160 117 C150 116 142 119 135 125 C128 120 123 110 121 95 Z" fill="#2A201D"/>
+              <path d="M148.5 126.5 Q160 135.5 171.5 126.5 Q160 130.5 148.5 126.5 Z" fill="#F3E7E0"/>
+              <path d="M160 100 C158 108 156 113 159 115 C161 116 164 115 165 113" stroke="#9C6848" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g class="c-eyes">
+                <ellipse cx="145" cy="97" rx="3.4" ry="4.3" fill="#1B1A1F"/>
+                <ellipse cx="175" cy="97" rx="3.4" ry="4.3" fill="#1B1A1F"/>
+                <circle cx="146.3" cy="95.5" r="1" fill="#fff"/>
+                <circle cx="176.3" cy="95.5" r="1" fill="#fff"/>
+              </g>
+              <path d="M134 84 Q144 78 155 82 M165 82 Q176 78 186 84" stroke="#201918" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <!-- quiff hairstyle -->
+              <path d="M122 95 C117 82 115 66 118 54 C120 44 126 36 133 31 C137 24 145 20 152 20 C157 15 166 13 173 15 C181 13 192 17 198 24 C206 31 211 44 209 58 C208 70 204 82 200 93 C198 83 195 76 191 71 C185 66 178 64 171 65 C166 61 158 60 152 63 C144 63 136 66 130 71 C126 77 124 85 123 95 Z" fill="url(#gHair)"/>
+              <path d="M134 33 C146 21 168 15 190 20 C176 20 158 23 142 36 Z" fill="#4A4040" opacity=".6"/>
+              <path d="M140 40 C152 30 166 26 180 27 M150 47 C160 39 172 36 186 37 M131 53 C139 45 147 41 155 39" stroke="#5A4E4E" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".55"/>
+              <path d="M123 95 C121 87 121 79 124 72 L127.5 74 C125.5 80 124.5 87 124.5 95 Z M197 95 C199 87 199 79 196 72 L192.5 74 C194.5 80 195.5 87 195.5 95 Z" fill="#3B3232" opacity=".55"/>
+              <!-- round metal glasses -->
+              <g fill="#FFFFFF" fill-opacity=".1" stroke="#B5BAC1" stroke-width="1.8">
+                <circle cx="145" cy="97" r="12.5"/>
+                <circle cx="175" cy="97" r="12.5"/>
+              </g>
+              <path d="M157.5 95 Q160 92 162.5 95 M132.5 95 L122 92 M187.5 95 L198 92" stroke="#B5BAC1" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M137 90.5 A9 9 0 0 1 144 86.5 M167 90.5 A9 9 0 0 1 174 86.5" stroke="#fff" stroke-opacity=".7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </g>
+          </g>
+          <!-- arms (short sleeves) -->
+          <g class="c-arm c-arm-l">
+            <path d="M78 248 C75 300 73 360 73 410 C80 416 92 416 98 410 C99 360 103 300 110 250 Z" fill="url(#gSkin)"/>
+            <path d="M73 406 C70 424 74 441 84 446 C95 449 101 433 98 406 Z" fill="url(#gSkin)"/>
+            <path d="M98 176 C83 185 77 214 75 258 C86 266 104 265 113 257 L114 212 C113 199 110 188 105 181 Z" fill="url(#gSleeveL)"/>
+            <path d="M75 252 C86 260 104 259 113 251" stroke="#4E111B" stroke-opacity=".55" stroke-width="2" fill="none"/>
+          </g>
+          <g class="c-arm c-arm-r">
+            <path d="M242 248 C245 300 247 360 247 410 C240 416 228 416 222 410 C221 360 217 300 210 250 Z" fill="url(#gSkin)"/>
+            <path d="M247 406 C250 424 246 441 236 446 C225 449 219 433 222 406 Z" fill="url(#gSkin)"/>
+            <path d="M222 176 C237 185 243 214 245 258 C234 266 216 265 207 257 L206 212 C207 199 210 188 215 181 Z" fill="url(#gSleeveR)"/>
+            <path d="M245 252 C234 260 216 259 207 251" stroke="#4E111B" stroke-opacity=".55" stroke-width="2" fill="none"/>
+            <path d="M229 226 l7 -3 M230 233 l7 -3" stroke="#F6EEE8" stroke-opacity=".8" stroke-width="1.6" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
+      <button class="pause" type="button" aria-label="Pause animation" aria-pressed="false">
+        <svg class="i-pause" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg>
+      </button>
+
+      <div class="hero-copy">
+        <p class="eyebrow" data-bind="name">Anand Tiwari</p>
+        <h1 class="hero-title lines-2"><span>DevOps</span><span>Engineer<i class="dot">.</i></span></h1>
+        <p class="hero-sub" data-bind="tagline"></p>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="#work">Explore work <span class="arr">→</span></a>
+        <div class="row">
+          <a class="btn btn-ghost" href="#contact">Let's talk</a>
+          <a class="btn btn-ghost js-resume" href="#" download hidden>Resume <span class="arr">↓</span></a>
+          <a class="btn btn-ghost js-github" href="#" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 01 About ───────── -->
+    <section class="section about" id="about">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="label" data-reveal><span>01</span><span class="rule"></span><span>About</span></p>
+          <h2 class="h2 split" data-split>Hi, I'm <em class="js-first">Anand.</em></h2>
+          <p class="lead" data-reveal id="aboutLead"></p>
+          <p class="muted" data-reveal id="aboutMore"></p>
+          <div class="btn-row" data-reveal id="aboutBtns"></div>
+        </div>
+
+        <div class="lanyard" id="lanyard">
+          <div class="swing" id="swing">
+            <div class="strap"></div>
+            <div class="clip"></div>
+            <div class="idcard" id="idcard" role="button" tabindex="0" aria-pressed="false" aria-label="Developer ID card — press to flip">
+              <div class="id-tilt" id="idTilt">
+                <div class="id-flip" id="idFlip">
+                  <!-- front -->
+                  <div class="id-face id-front">
+                    <div class="id-head">
+                      <span class="id-logo" data-bind="initials">AT</span>
+                      <div>
+                        <div class="id-title">DEVELOPER ID</div>
+                        <div class="id-sub" id="idIssued">Portfolio · 2026</div>
+                      </div>
+                    </div>
+                    <div class="id-photo" id="idPhoto">
+                      <svg viewBox="96 24 128 150" aria-hidden="true"><use href="#c-upper"/></svg>
+                    </div>
+                    <div class="id-name" data-bind="name">Anand Tiwari</div>
+                    <div class="id-role" data-bind="role">DevOps Engineer</div>
+                    <div class="id-meta">
+                      <div><small>ID No.</small><b id="idNo">AT-0001</b></div>
+                      <div><small>Dept</small><b id="idDept">MCA</b></div>
+                      <div><small>Valid till</small><b id="idValid">2027</b></div>
+                    </div>
+                    <div class="id-foot">
+                      <div class="barcode" id="barcode" aria-hidden="true"></div>
+                      <span class="holo" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                  <!-- back -->
+                  <div class="id-face id-back" aria-hidden="true">
+                    <div class="idb-title">Scan · GitHub</div>
+                    <div class="idb-qr" id="idQr"></div>
+                    <a class="idb-url" id="idUrl" href="#" target="_blank" rel="noopener" tabindex="-1">github.com</a>
+                    <div class="idb-rows">
+                      <div><small>Cloud</small><b>AWS · Linux</b></div>
+                      <div><small>Ships with</small><b>Jenkins · Docker</b></div>
+                    </div>
+                    <p class="idb-note">If found, please return to its developer.</p>
+                    <div class="idb-sign">
+                      <div><span class="sig" data-bind="name">Anand Tiwari</span><small>Authorised signature</small></div>
+                      <span class="holo" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="flip-hint" aria-hidden="true">Tap the card to flip <span>↻</span></p>
+        </div>
+
+        <div class="about-facts" data-reveal>
+          <p class="label"><span>Quick facts</span></p>
+          <dl class="facts" id="facts"></dl>
+          <p class="quote" id="quote"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 02 Skills ───────── -->
+    <section class="section skills" id="skills">
+      <p class="label" data-reveal><span>02</span><span class="rule"></span><span>Skills</span></p>
+      <h2 class="h2 split" data-split>The periodic table <em>of my stack.</em></h2>
+      <p class="muted sub" data-reveal id="skillsNote"></p>
+      <div class="chips-row" data-reveal id="famChips" role="group" aria-label="Filter by family"></div>
+
+      <div class="skills-body">
+        <div class="ptable" id="ptable"></div>
+        <aside class="preview" id="preview" aria-live="polite">
+          <div class="pv-logo" id="pvLogo"></div>
+          <div class="pv-name" id="pvName"></div>
+          <div class="pv-fam" id="pvFam"></div>
+          <p class="pv-hint">Hover any element to see its logo</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ───────── 03 Work ───────── -->
+    <section class="section work" id="work">
+      <div class="work-head">
+        <div>
+          <p class="label" data-reveal><span>03</span><span class="rule"></span><span>Selected work</span></p>
+          <h2 class="h2 split" data-split>Things I've <em>built.</em></h2>
+        </div>
+        <p class="side-note" data-reveal id="projectsNote"></p>
+      </div>
+      <div class="panels" id="panels" data-reveal></div>
+    </section>
+
+    <!-- ───────── 04 Learning ───────── -->
+    <section class="section learning" id="learning">
+      <div class="learn-grid">
+        <div class="learn-head">
+          <p class="label" data-reveal><span>04</span><span class="rule"></span><span id="learningLabel">Learning log</span></p>
+          <h2 class="h2 split" data-split>Always <em>learning.</em></h2>
+          <p class="muted" data-reveal id="learningNote"></p>
+        </div>
+        <ol class="learn-list" id="learnList" data-reveal></ol>
+      </div>
+    </section>
+
+    <!-- ───────── 05 Journey ───────── -->
+    <section class="section journey" id="journey">
+      <div class="journey-head">
+        <div>
+          <p class="label" data-reveal><span>05</span><span class="rule"></span><span>Journey</span></p>
+          <h2 class="h2 split" data-split>Education &amp; <em>experience.</em></h2>
+        </div>
+        <p class="side-note" data-reveal id="journeyNote"></p>
+      </div>
+      <div class="tl" id="tl">
+        <div class="tl-items" id="tlItems"></div>
+        <div class="tl-line"><i id="tlFill"></i></div>
+        <div class="tl-year-col"><div class="tl-year"><span class="tl-dot"></span><b id="tlYear">2025</b></div></div>
+        <div class="tl-next" aria-hidden="true">Next</div>
+      </div>
+    </section>
+
+    <!-- ───────── 06 Achievements ───────── -->
+    <section class="achv" id="achievements">
+      <div class="achv-sticky">
+        <div class="achv-head">
+          <div>
+            <p class="label" data-reveal><span>06</span><span class="rule"></span><span>Achievements</span></p>
+            <h2 class="h2 split" data-split>Proud <em>moments.</em></h2>
+          </div>
+          <div class="achv-progress" aria-hidden="true"><i id="achvBar"></i></div>
+        </div>
+        <div class="achv-viewport">
+          <div class="achv-track" id="achvTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── 07 Contact ───────── -->
+    <section class="section contact" id="contact">
+      <p class="label" data-reveal><span>07</span><span class="rule"></span><span>Contact</span></p>
+      <h2 class="h2 huge split" data-split>Let's build <em>something.</em></h2>
+      <div class="contact-grid">
+        <div data-reveal>
+          <p class="lead" id="contactNote"></p>
+          <div class="btn-row" id="contactBtns"></div>
+        </div>
+        <form class="form" id="contactForm" data-reveal novalidate>
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
+          <!-- Formspree: subject line of the email Anand receives + a hidden trap that bots fill in (those get dropped as spam) -->
+          <input type="hidden" name="_subject" value="New message from your portfolio website">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <div class="form-foot">
+            <button class="btn btn-dark" type="submit">Send message <span class="arr">→</span></button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> <span data-bind="name">Anand Tiwari</span></span>
+    <span class="footer-mid">Designed &amp; built with HTML, CSS &amp; JavaScript</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
